@@ -1,0 +1,32 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  background-image: url("https://miro.medium.com/max/7296/1*deC-mkFzjrzBPL5qEnx-FA.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.sodokuDiv {
+  margin: 0 auto;
+}
+
+td {
+  background-color: rgba(96, 129, 129, 0.4);
+
+  color: whitesmoke;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
+  border: 1px solid black;
+}
+
+td:nth-child(3),
+td:nth-child(6) {
+  border-right: 4px solid black;
+}
+
+tr:nth-child(3),
+tr:nth-child(6) {
+  border-bottom: 4px solid black;
+}
