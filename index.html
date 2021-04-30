@@ -15,14 +15,22 @@
   </head>
   <body>
     <div class="container">
-      <div class="text-center my-3">
-        <button class="btn btn-primary" id="generate">Generate</button>
-        <button class="btn btn-primary" id="solve">Solve</button>
-        <button class="btn btn-primary" id="reset">Reset</button>
-        <label for="timer" class="text-light">Speed</label>
-        <input type="range" name="timer" id="timer" min="0" max="200" />
-        <label for="level">Difficulty</label>
-        <select name="level" id="levelSelector">
+      <div class="text-center mt-3 mb-1">
+        <label for="timer" class="text-light" style="font-size: 20px"
+          >Speed</label
+        >
+        <input
+          type="range"
+          class="mr-5"
+          name="timer"
+          id="timer"
+          min="0"
+          max="200"
+        />
+        <label for="level" class="text-light" style="font-size: 20px"
+          >Difficulty</label
+        >
+        <select name="level" class="bg-dark text-light" id="levelSelector">
           <option value="1">Easy</option>
           <option value="2">Medium</option>
           <option value="3">Hard</option>
@@ -43,7 +51,7 @@
               <td></td>
               <td></td>
             </tr>
-            <tr class="matrix">
+            <tr>
               <td></td>
               <td></td>
               <td></td>
@@ -133,6 +141,15 @@
             </tr>
           </tbody>
         </table>
+      </div>
+      <div class="text-center my-3">
+        <button class="btn btn-info mr-4" id="generate">
+          <span></span><span></span>
+          Generate
+          <span></span>
+        </button>
+        <button class="btn btn-info" id="solve">Solve</button>
+        <!-- <button class="btn btn-primary" id="reset">Reset</button> -->
       </div>
     </div>
 

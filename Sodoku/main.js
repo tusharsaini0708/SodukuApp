@@ -4,7 +4,7 @@ import randomSodoku from "./sodokuGenerator.js";
 var grid = document.querySelectorAll("td");
 var generateButton = document.querySelector("#generate");
 var solveButton = document.querySelector("#solve");
-var resetButton = document.querySelector("#reset");
+//var resetButton = document.querySelector("#reset");
 var levelSelector = document.querySelector("#levelSelector");
 var timer;
 var difficultyLevel = 1;
@@ -15,14 +15,14 @@ levelSelector.addEventListener("change", function () {
   difficultyLevel = levelSelector.value;
 });
 
-resetButton.addEventListener("click", function () {
-  let tempmatrix = new Array(9).fill(null).map(() => new Array(9).fill(null));
-  matrix = tempmatrix;
-  for (let i = 0; i < 81; i++) {
-    grid[i].style.backgroundColor = "rgba(96, 129, 129, 0.4) ";
-  }
-  matrixToGrid();
-});
+// resetButton.addEventListener("click", function () {
+//   let tempmatrix = new Array(9).fill(null).map(() => new Array(9).fill(null));
+//   matrix = tempmatrix;
+//   for (let i = 0; i < 81; i++) {
+//     grid[i].style.backgroundColor = "rgba(96, 129, 129, 0.4) ";
+//   }
+//   matrixToGrid();
+// });
 
 generateButton.addEventListener("click", function () {
   for (let i = 0; i < 81; i++) {
@@ -36,6 +36,7 @@ generateButton.addEventListener("click", function () {
 solveButton.addEventListener("click", function () {
   let counter = { count: 0 };
   solveSodoku(0, 0, matrix, counter);
+  stopFlag = 0;
 });
 
 function matrixToGrid() {
@@ -73,14 +74,14 @@ const solveSodoku = (i, j, matrix1, counter) => {
             if (stopFlag == 0) {
               solveButton.disabled = true;
               generateButton.disabled = true;
-              resetButton.disabled = true;
+              //resetButton.disabled = true;
             } else {
               solveButton.disabled = false;
               generateButton.disabled = false;
-              resetButton.disabled = false;
+              //resetButton.disabled = false;
             }
             grid[9 * i + j].textContent = val;
-            grid[9 * i + j].style.backgroundColor = "green";
+            grid[9 * i + j].style.backgroundColor = "#4ED03A";
           }, counter.count * timer);
         })(matrix1[i][j]);
         if (solveSodoku(ni, nj, matrix1, counter) == 1) return 1;
