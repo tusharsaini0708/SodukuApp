@@ -79,8 +79,6 @@ function removeElements(tempMatrix, difficultyLevel) {
     max = 60;
   }
   let k = Math.floor(Math.random() * (max - min) + min);
-  console.log(k);
-  //k number of elements to be removed
   let row, colomn;
   for (let i = 0; i < k; i++) {
     row = Math.floor(Math.random() * 9);
